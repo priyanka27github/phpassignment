@@ -151,17 +151,25 @@ mysqli_close($conn);
     <input type="date" class="form-control" id="date" placeholder="date">
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Gender</label>
-      <input type="radio" class="form-control" id="gender" value="male"/>Male
-      <input type="radio" class="form-control" id="gender" value="male"/>Female
+    <div class="form-group col-md-4">
+    Gender: <br>
+         <input type="radio" name="gender"  
+         <?php if (isset($gender) && $gender=="female") echo "checked";?>
+         value="female">  Female &nbsp; &nbsp; &nbsp; &nbsp;
+         <input type="radio" name="gender"
+         <?php if (isset($gender) && $gender=="male") echo "checked";?>
+         value="male">  Male &nbsp; &nbsp; &nbsp; &nbsp;
+         <input type="radio" name="gender"
+           <?php if (isset($gender) && $gender=="other") echo "checked";?>
+          value="other">  Other
+        
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">Age</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
 
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-4">
       <label for="inputZip">Phone Number</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
